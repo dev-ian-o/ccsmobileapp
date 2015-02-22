@@ -1,46 +1,175 @@
+
+
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
+        <meta name="author" content="www.frebsite.nl" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+        <title>UMak-CCS Portal</title>
+
+        <!-- <link type="text/css" rel="stylesheet" href="css/jquery.mobile.min.css" /> -->
+        <link type="text/css" rel="stylesheet" href="css/demo.css" />
+
+        <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+        
+
+        <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+        <!-- // <script type="text/javascript" src="js/jquery.mobile.min.js"></script> -->
+        <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+        <script type="text/javascript" src="js/jquery.hammer.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+
+                var $menuRight = $('nav#menu-right');
+                var $menuLeft = $('nav#menu');
+                var $divGrades = $('div#grades');
+                var $gradeEl = '';
+                var grading = '';
+                $menuRight.mmenu({
+                    offCanvas: {
+                        position: "right"
+                    },
+                    classes     : 'mm-light',
+                    dragOpen    : true,
+                    counters    : true,
+                    searchfield : true,
+                    labels      : {
+                        fixed       : !$.mmenu.support.touch
+                    },
+                    header      : {
+                        add         : true,
+                        update      : true,
+                        title       : 'College'
+                    }
+                });
+
+                $menuLeft.mmenu({
+                    position    : 'left',
+                    classes     : 'mm-light',
+                    dragOpen    : true                  
+                });
+
+                $divGrades.mmenu({
+                    offCanvas: {
+                        position: "right"
+                    },
+                    classes     : 'mm-fullscreen mm-light',
+                    zposition   : 'front',
+                    header      : true
+                });
+
+
+                // actions
+
+                $divGrades.on('opening.mm',function(){
+                    // console.log('open grade menu');
+                    $(this).find('.header-grades');
+                    $(this).find('.header-1stsem-grade').html(grading +' - '+'First Semester')
+                    $(this).find('.header-2ndsem-grade').html(grading +' - '+'Second Semester')
+                    $(this).find('.header-grades').html(grading);
+                });
+
+                $('.btn-grades').click(function(){ grading = $(this).html(); });
+                $('.mm-prev').click(function(){ 
+                    if($(this).attr('href') === "#page-content") $('#grades').trigger('close'); 
+                });
+            });
+        </script>
+    
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+
+        <div id="page-content">
+            <div id="header">
+                <a href="#menu"></a>
+                UMak-CCS App
+                <a href="#menu-right" class="friends right"></a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="home.php">Newsfeed</a></li>
+                    <li><a href="profile.php">My Profile</a></li>
+                    <li><a href="grades.php">My Grades</a></li>
+                    <li><a href="schedule.php">Schedules</a></li>
+                    <li><a href="settings.php">Settings</a></li>
+                    <li><a href="logout.php">Log Out</a></li>
+                </ul>
+            </nav>
+            <nav id="menu-right"> <!-- Menu on right-->
+                <ul>
+                    <li>
+                        <span>Teachers</span>
+                        <ul>
+                
+
+                        </ul>
+                    </li>
+                    
+
+                </ul>
+            </nav>
+
+            <div id="content">
+
+            <a href="#grades" class='btn-grades'>1st Year Grades</a> 
+            <a href="#grades" class='btn-grades'>2nd Year Grades</a> 
+            <a href="#grades" class='btn-grades'>3rd Year Grades</a> 
+            <a href="#grades" class='btn-grades'>4th Year Grades</a> 
+            <a href="sample.html" class='btn-grades'>4th Year Grades</a> 
+
+            <div id="grades">
+                <div id="panel-overview">
+                    <!-- header info -->
+                    <h3 class="Header header-grades">Grades</h3>
+                    <a href="#page-content" class="Prev" id="first-layer"></a>
+                    <ul class="List">
+                        <li>
+                            <span>
+                                First Semester Grade
+                            </span>
+                            <!-- <em class="Counter">5</em> -->
+                            <div id="grade-first-sem">
+                                <!-- header info -->
+                                <h3 class="Header header-1stsem-grade">First Semester Grade</h3>
+                                <a href="#panel-overview" class="Prev"></a>                         
+                                <!-- <table data-role="table" id="movie-table" data-mode="reflow" class="ui-responsive table-stroke">
+                                    <thead>
+                                        <th>Subject</th>
+                                        <th>Units</th>
+                                        <th>Midterm Grade</th>
+                                        <th>Final Term Grade</th>
+                                        <th>Total Grade</th>
+                                    </thead>
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                              </table> -->
+                          </div>
+                        </li>
+
+                        <li>
+                          <span>
+                            Second Semester Grade
+                          </span>
+                          <!-- <em class="Counter">6</em> -->
+                          <div id="grade-second-sem">
+                            <!-- header info -->
+                            <h3 class="Header header-2ndsem-grade">Second Semester Grade</h3>
+                            <a href="#panel-overview" class="Prev"></a>
+                          </div>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+
     </body>
 </html>

@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+		<title>jQuery.mmenu - Demo</title>
+
+		<link type="text/css" rel="stylesheet" href="css/demo.css" />
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+		
+
+		<script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+		<script type="text/javascript" src="js/jquery.hammer.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				var $menu = $('nav#menu-right');
+
+				$menu.mmenu({
+					offCanvas: {
+			            position: "right"
+			        },
+					classes		: 'mm-light',
+					dragOpen	: true,
+					counters	: true,
+					searchfield	: true,
+					labels		: {
+						fixed		: !$.mmenu.support.touch
+					},
+					header		: {
+						add			: true,
+						update		: true,
+						title		: 'College'
+					}
+				});
+
+				$('nav#menu').mmenu({
+					position	: 'left',
+					classes		: 'mm-light',
+					dragOpen	: true					
+				});
+
+				$('div.grades').mmenu({
+					offCanvas: {
+			            position: "right"
+			        },
+					classes		: 'mm-fullscreen mm-light',
+					zposition	: 'front',
+					header		: true
+				});
+			});
+		</script>
+	
+	<body>
+
+		<div id="page">
+			<div id="header">
+				<a href="#menu"></a>
+				UMak-CCS App
+				<a href="#menu-right" class="friends right"></a>
+			</div>
+			<nav id="menu">
+				<ul>
+					<li><a href="home.php">Newsfeed</a></li>
+					<li><a href="profile.php">My Profile</a></li>
+					<li><a href="grades.php">My Grades</a></li>
+					<li><a href="schedule.php">Schedules</a></li>
+					<li><a href="settings.php">Settings</a></li>
+					<li><a href="logout.php">Log Out</a></li>
+				</ul>
+			</nav>
+			<nav id="menu-right"> <!-- Menu on right-->
+				<ul>
+					<li>
+						<span>Teachers</span>
+						<ul>
+				
+
+						</ul>
+					</li>
+					
+
+				</ul>
+			</nav>
+			<div class="grades">
+				<ul>
+					<li>
+						<span>Grades</span>
+						<ul>
+				
+
+						</ul>
+					</li>
+					
+
+				</ul>
+			</div>
+		</div>
+
+	</body>
+</html>
