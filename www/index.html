@@ -8,79 +8,11 @@
         <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
 
         <title>UMak-CCS Portal</title>
-
-        <!-- <link type="text/css" rel="stylesheet" href="css/jquery.mobile.min.css" /> -->
         <link type="text/css" rel="stylesheet" href="css/demo.css" />
-
         <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-        
-
-        <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
-        <!-- // <script type="text/javascript" src="js/jquery.mobile.min.js"></script> -->
-        <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
-        <script type="text/javascript" src="js/jquery.hammer.min.js"></script>
-        <script type="text/javascript">
-            $(function() {
-
-                var $menuRight = $('nav#menu-right');
-                var $menuLeft = $('nav#menu');
-                var $divGrades = $('div#grades');
-                var $gradeEl = '';
-                var grading = '';
-                $menuRight.mmenu({
-                    offCanvas: {
-                        position: "right"
-                    },
-                    classes     : 'mm-light',
-                    dragOpen    : true,
-                    counters    : true,
-                    searchfield : true,
-                    labels      : {
-                        fixed       : !$.mmenu.support.touch
-                    },
-                    header      : {
-                        add         : true,
-                        update      : true,
-                        title       : 'College'
-                    }
-                });
-
-                $menuLeft.mmenu({
-                    position    : 'left',
-                    classes     : 'mm-light',
-                    dragOpen    : true                  
-                });
-
-                $divGrades.mmenu({
-                    offCanvas: {
-                        position: "right"
-                    },
-                    classes     : 'mm-fullscreen mm-light',
-                    zposition   : 'front',
-                    header      : true
-                });
-
-
-                // actions
-
-                $divGrades.on('opening.mm',function(){
-                    // console.log('open grade menu');
-                    $(this).find('.header-grades');
-                    $(this).find('.header-1stsem-grade').html(grading +' - '+'First Semester')
-                    $(this).find('.header-2ndsem-grade').html(grading +' - '+'Second Semester')
-                    $(this).find('.header-grades').html(grading);
-                });
-
-                $('.btn-grades').click(function(){ grading = $(this).html(); });
-                $('.mm-prev').click(function(){ 
-                    if($(this).attr('href') === "#page-content") $('#grades').trigger('close'); 
-                });
-            });
-        </script>
-    
     <body>
-
-        <div id="page-content">
+        <!-- <div class="fa fa-circle-o-notch fa-spin loader fa-4x"></div> -->
+        <div id="page-content" class="hidden">
             <div id="header">
                 <a href="#menu"></a>
                 UMak-CCS App
@@ -109,14 +41,12 @@
 
                 </ul>
             </nav>
-
             <div id="content">
 
-            <a href="#grades" class='btn-grades'>1st Year Grades</a> 
-            <a href="#grades" class='btn-grades'>2nd Year Grades</a> 
-            <a href="#grades" class='btn-grades'>3rd Year Grades</a> 
-            <a href="#grades" class='btn-grades'>4th Year Grades</a> 
-            <a href="sample.html" class='btn-grades'>4th Year Grades</a> 
+            <a href="#grades" class='btn-grades' data-year="1">1st Year Grades</a> 
+            <a href="#grades" class='btn-grades' data-year="2">2nd Year Grades</a> 
+            <a href="#grades" class='btn-grades' data-year="3">3rd Year Grades</a> 
+            <a href="#grades" class='btn-grades' data-year="4">4th Year Grades</a> 
 
             <div id="grades">
                 <div id="panel-overview">
@@ -132,25 +62,9 @@
                             <div id="grade-first-sem">
                                 <!-- header info -->
                                 <h3 class="Header header-1stsem-grade">First Semester Grade</h3>
-                                <a href="#panel-overview" class="Prev"></a>                         
-                                <!-- <table data-role="table" id="movie-table" data-mode="reflow" class="ui-responsive table-stroke">
-                                    <thead>
-                                        <th>Subject</th>
-                                        <th>Units</th>
-                                        <th>Midterm Grade</th>
-                                        <th>Final Term Grade</th>
-                                        <th>Total Grade</th>
-                                    </thead>
-                                <tbody>
-                                    <tr>
-                                        <th></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                              </table> -->
+                                <a href="#panel-overview" class="Prev"></a>                     
+                                <div class="grade-1st-content">
+                                </div> 
                           </div>
                         </li>
 
@@ -162,7 +76,9 @@
                           <div id="grade-second-sem">
                             <!-- header info -->
                             <h3 class="Header header-2ndsem-grade">Second Semester Grade</h3>
-                            <a href="#panel-overview" class="Prev"></a>
+                            <a href="#panel-overview" class="Prev"></a>           
+                            <div class="grade-2nd-content">
+                            </div>    
                           </div>
                         </li>
                     </ul> 
@@ -171,5 +87,12 @@
             </div>
         </div>
 
+
+        <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+        <script type="text/javascript" src="js/jquery.hammer.min.js"></script>
+        <script type="text/javascript" src="scripts/localstorage.js"></script>
+        <script type="text/javascript" src="scripts/grades.js"></script>
+        
     </body>
 </html>

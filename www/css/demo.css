@@ -135,3 +135,12 @@ pre
 				color: inherit;
 			}
 
+.hidden{
+	display:none;
+}
+
+.loader{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+}
