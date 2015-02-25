@@ -1,35 +1,10 @@
 $(function() {
     // localStorage.setItem('SERVER_URL', "http://192.168.1.101/proto");
     var SERVER_URL = localStorage.SERVER_URL;
-    var $menuRight = $('nav#menu-right');
-    var $menuLeft = $('nav#menu');
     var $divGrades = $('div#grades');
     var $gradeEl = '';
     var grading = '';
     var grades_object = JSON.parse(localStorage.grades_object);
-    $menuRight.mmenu({
-        offCanvas: {
-            position: "right"
-        },
-        classes     : 'mm-light',
-        dragOpen    : true,
-        counters    : true,
-        searchfield : true,
-        labels      : {
-            fixed       : !$.mmenu.support.touch
-        },
-        header      : {
-            add         : true,
-            update      : true,
-            title       : 'College'
-        }
-    });
-
-    $menuLeft.mmenu({
-        position    : 'left',
-        classes     : 'mm-light',
-        dragOpen    : true                  
-    });
 
     $divGrades.mmenu({
         offCanvas: {
@@ -49,18 +24,15 @@ $(function() {
         $(this).find('.header-1stsem-grade').html(grading +' - '+'First Semester');
         $(this).find('.header-2ndsem-grade').html(grading +' - '+'Second Semester');
         $(this).find('.header-grades').html(grading);
-
-
     });
 
 
     $('.btn-grades').click(function(){ 
         grading = $(this).html(); 
-        // 1st year
-
-                // console.log($(this).data('year'));
-                $('.grade-1st-content').html('');
-                $('.grade-2nd-content').html('');
+        
+        $('.grade-1st-content').html('');
+        $('.grade-2nd-content').html('');
+        
         switch ($(this).data('year')) {
             case 1:
                 $.each( grades_object, function( key, value ) {
@@ -158,9 +130,11 @@ $(function() {
              $('.grade-2nd-content').append("<h5><center>Not available!</center></h5>");   
         }
     });
+
     $('.mm-prev').click(function(){ 
         if($(this).attr('href') === "#page-content") $('#grades').trigger('close'); 
     });
-
+    
     $('div.hidden').fadeIn(1000).removeClass('hidden');
+
 });
