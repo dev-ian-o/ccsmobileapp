@@ -9,6 +9,20 @@ $(function() {
 
 
     var SERVER_URL = localStorage.SERVER_URL;
+
+    $.ajax({
+            url: localStorage.SERVER_URL + '/includes/requests/requests.php',
+            type: 'POST',
+            data: "form_post=1",
+            dataType: 'json',
+            success: function(results){
+                console.log(results);
+                localStorage.setItem('posts_object',JSON.stringify(results));
+            },
+            complete:function(){
+            }
+    });
+    
     console.log(SERVER_URL);
     $('#form-login').on('submit',function(e){
         e.preventDefault();

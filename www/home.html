@@ -9,6 +9,7 @@
         <link type="text/css" rel="stylesheet" href="css/demo.css" />
         <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/ace.min.css" />
 
     </head>
     <body>
@@ -38,59 +39,45 @@
 
                         </ul>
                     </li>
-                    
 
                 </ul>
             </nav>
             <div id="content">
-            <div class="container text-center">
-                <h1>My Grades</h1>
-                <a href="#grades" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="1">1st Year Grades</a> 
-              
-                <a href="#grades" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="2">2nd Year Grades</a> 
-              
-                <a href="#grades" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="3">3rd Year Grades</a> 
-              
-                <a href="#grades" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="4">4th Year Grades</a> 
-                       
-            </div>
+                <div class="container-fluid">
+                    <h3 class="text-center">Newsfeed</h3>
+                    <div>
+                        <a href="#post" class='btn-grades btn btn-default btn-block' style="text-decoration: none;" data-year="4">POST</a> 
+                    </div><br>
+                    <div class="widget-box" style="border:none;">
+                        <div class="widget-body" style="border:none;">
+                            <div class="widget-main no-padding">
+                                <div class="dialogs diaolog-posts">
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>  
+                <div id="post">
+                    <div id="panel-overview">
+                        <!-- header info -->
+                        <h5 class="Header text-center">POST</h5>
+                        <div class="container">
+                            <form id="form-post">
+                                <input type="hidden" name="submit_post" value="1">
+                                <div class="form-group">
+                                    <label>Write something here:</label>
+                                    <textarea type="text" name="post" class="form-control" placeholder="Input your post here!" required rows="6"> </textarea> 
+                                </div>
+                                <div class="form-group text-center">
 
-            <div id="grades">
-                <div id="panel-overview">
-                    <!-- header info -->
-                    <h3 class="Header header-grades">Grades</h3>
-                    <a href="#page-content" class="Prev" id="first-layer"></a>
-                    <ul class="List">
-                        <li>
-                            <span>
-                                First Semester Grade
-                            </span>
-                            <!-- <em class="Counter">5</em> -->
-                            <div id="grade-first-sem">
-                                <!-- header info -->
-                                <h3 class="Header header-1stsem-grade">First Semester Grade</h3>
-                                <a href="#panel-overview" class="Prev"></a>                     
-                                <div class="grade-1st-content">
-                                </div> 
-                          </div>
-                        </li>
+                                    <button type="submit" class="btn btn-primary btn-lg">POST</button>
+                                </div>
+                            </form>
+                        </div>
+                        <a href="#page-content" class="Prev" id="first-layer"></a>
 
-                        <li>
-                          <span>
-                            Second Semester Grade
-                          </span>
-                          <!-- <em class="Counter">6</em> -->
-                          <div id="grade-second-sem">
-                            <!-- header info -->
-                            <h3 class="Header header-2ndsem-grade">Second Semester Grade</h3>
-                            <a href="#panel-overview" class="Prev"></a>           
-                            <div class="grade-2nd-content">
-                            </div>    
-                          </div>
-                        </li>
-                    </ul> 
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
 
@@ -100,7 +87,7 @@
         <script type="text/javascript" src="js/jquery.hammer.min.js"></script>
         <script type="text/javascript" src="scripts/localstorage.js"></script>
         <script type="text/javascript" src="scripts/menus.js"></script>
-        <script type="text/javascript" src="scripts/grades.js"></script>
+        <script type="text/javascript" src="scripts/home.js"></script>
         
     </body>
 </html>

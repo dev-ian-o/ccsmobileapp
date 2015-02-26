@@ -6,7 +6,9 @@ $(function() {
             position: "right"
         },
         classes     : 'mm-light',
-        dragOpen    : true,
+        dragOpen    : {
+            open: true
+        },
         counters    : true,
         searchfield : true,
         labels      : {
@@ -22,7 +24,9 @@ $(function() {
     $menuLeft.mmenu({
         position    : 'left',
         classes     : 'mm-light',
-        dragOpen    : true                  
+        dragOpen    : {
+            open: true
+        }                  
     });
     if(JSON.parse(localStorage.users_object).image){
         var image = JSON.parse(localStorage.users_object).image;

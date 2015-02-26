@@ -2,7 +2,6 @@ $(function() {
 
     localStorage.setItem('SERVER_URL', "http://192.168.1.101/proto");
 
-
     if(JSON.parse(localStorage.users_object).id_student){
 
 	    ID_STUDENT = JSON.parse(localStorage.users_object).id_student;
@@ -20,4 +19,6 @@ $(function() {
 			}
 	    });
 	}
+
+	 
 });
