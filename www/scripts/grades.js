@@ -1,6 +1,7 @@
 $(function() {
     // localStorage.setItem('SERVER_URL', "http://192.168.1.101/proto");
     var SERVER_URL = localStorage.SERVER_URL;
+    var ID_STUDENT = JSON.parse(localStorage.users_object).id_student;
     var $divGrades = $('div#grades');
     var $gradeEl = '';
     var grading = '';
