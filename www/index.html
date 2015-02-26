@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -39,4 +39,39 @@
         <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="scripts/login.js"></script>
     </body>
+</html> -->
+
+
+<html>
+    <head>
+        <style type="text/css">
+            body
+            {
+                margin:   0;
+                overflow: hidden;
+            }
+
+            #iframe1
+            {
+                height:   100%;
+                left:     0px;
+                position: absolute;
+                top:      0px;
+                width:    100%;
+            }
+            .hidden{
+                display: none;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+
+    </head>
+    <body class="hidden">
+        <iframe id="iframe1" src="http://192.168.1.101/proto" ></iframe>
+    </body>
+    <script type="text/javascript">
+        $(function() {
+            $('.hidden').fadeIn(1000).removeClass('hidden');  
+        });
+    </script>
 </html>

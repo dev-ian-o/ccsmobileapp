@@ -20,5 +20,11 @@ $(function() {
 	    });
 	}
 
+    if(JSON.parse(localStorage.users_object).id_teacher){
+
+		$menu = $('#menu').find('li a')[2];
+		$($menu).html('My students');
+		$($menu).attr('href','students.html');
+	}
 	 
 });

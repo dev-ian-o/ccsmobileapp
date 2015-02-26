@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="www.frebsite.nl" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+        <title>UMak-CCS Portal</title>
+        <link type="text/css" rel="stylesheet" href="css/demo.css" />
+        <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+    </head>
+    <body>
+        <!-- <div class="fa fa-circle-o-notch fa-spin loader fa-4x"></div> -->
+        <div id="page-content" class="hidden">
+            <div id="header">
+                <a href="#menu"></a>
+                UMak-CCS App
+                <a href="#menu-right" class="friends right"></a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="home.html">Newsfeed</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                    <li><a href="grades.html">My Grades</a></li>
+                    <li><a href="schedule.html">Schedules</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="logout.html">Log Out</a></li>
+                </ul>
+            </nav>
+            <nav id="menu-right"> <!-- Menu on right-->
+                <ul>
+                    <li>
+                        <span>Teachers</span>
+                        <ul>
+                
+
+                        </ul>
+                    </li>
+                    
+
+                </ul>
+            </nav>
+            <div id="content">
+            <div class="container text-center">
+                <h1>My Students</h1>
+                <a href="#grades" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="1">1st Year</a> 
+              
+                <a href="#grades" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="2">2nd Year</a> 
+              
+                <a href="#grades" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="3">3rd Year</a> 
+              
+                <a href="#grades" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="4">4th Year</a> 
+                       
+            </div>
+
+            <div id="grades">
+                <div id="panel-overview">
+                    <!-- header info -->
+                    <h3 class="Header header-grades">Grades</h3>
+                    <a href="#page-content" class="Prev" id="first-layer"></a>
+                    <ul class="List">
+                        <li>
+                            <span>
+                                First Semester Grade
+                            </span>
+                            <!-- <em class="Counter">5</em> -->
+                            <div id="grade-first-sem">
+                                <!-- header info -->
+                                <h3 class="Header header-1stsem-grade">First Semester Grade</h3>
+                                <a href="#panel-overview" class="Prev"></a>                     
+                                <div class="grade-1st-content">
+                                </div> 
+                          </div>
+                        </li>
+
+                        <li>
+                          <span>
+                            Second Semester Grade
+                          </span>
+                          <!-- <em class="Counter">6</em> -->
+                          <div id="grade-second-sem">
+                            <!-- header info -->
+                            <h3 class="Header header-2ndsem-grade">Second Semester Grade</h3>
+                            <a href="#panel-overview" class="Prev"></a>           
+                            <div class="grade-2nd-content">
+                            </div>    
+                          </div>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+        <script type="text/javascript" src="js/jquery.hammer.min.js"></script>
+        <script type="text/javascript" src="scripts/localstorage.js"></script>
+        <script type="text/javascript" src="scripts/menus.js"></script>
+        <script type="text/javascript" src="scripts/grades.js"></script>
+        
+    </body>
+</html>

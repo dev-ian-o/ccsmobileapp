@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="www.frebsite.nl" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+        <title>UMak-CCS Portal</title>
+        <link type="text/css" rel="stylesheet" href="css/demo.css" />
+        <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/ace.min.css" />
+
+    </head>
+    <body>
+        <!-- <div class="fa fa-circle-o-notch fa-spin loader fa-4x"></div> -->
+        <div id="page-content" class="hidden">
+            <div id="header">
+                <a href="#menu"></a>
+                UMak-CCS App
+                <a href="#menu-right" class="friends right"></a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="home.html">Newsfeed</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                    <li><a href="grades.html">My Grades</a></li>
+                    <li><a href="schedule.html">Schedules</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="logout.html">Log Out</a></li>
+                </ul>
+            </nav>
+            <nav id="menu-right"> <!-- Menu on right-->
+                <ul>
+                    <li>
+                        <span>Teachers</span>
+                        <ul>
+                
+
+                        </ul>
+                    </li>
+                    
+
+                </ul>
+            </nav>
+            <div id="content">
+            <div class="container">
+                <h1 class="text-center">Schedules</h1>
+                <a href="#schedule" class='btn-grades btn btn-default btn-lg btn-block' style="text-decoration: none;" data-year="1">View my schedule</a> 
+                <div class="widget-box">
+<!--                     <div class="widget-header">
+                        <h5>Default Widget Box</h5>
+                    </div>
+
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <p class="alert alert-info">
+                                Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+            <div id="schedule">
+                <div id="panel-overview">
+                    <!-- header info -->
+                    <h3 class="Header header-grades">Schedule</h3>
+                    <a href="#page-content" class="Prev" id="first-layer"></a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+        <script type="text/javascript" src="js/jquery.hammer.min.js"></script>
+        <script type="text/javascript" src="scripts/localstorage.js"></script>
+        <script type="text/javascript" src="scripts/menus.js"></script>
+        <script type="text/javascript" src="scripts/schedule.js"></script>
+        
+    </body>
+</html>

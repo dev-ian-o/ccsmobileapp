@@ -29,19 +29,6 @@ $(function() {
     });
 
 
-    // $.ajax({
-    //         url: localStorage.SERVER_URL + '/includes/requests/requests.php',
-    //         type: 'POST',
-    //         data: "form_post=1",
-    //         dataType: 'json',
-    //         success: function(results){
-    //             console.log(results);
-    //             posts_object = results;
-    //             localStorage.setItem('posts_object',JSON.stringify(results));
-    //         },
-    //         complete:function(){
-    //         }
-    // });
     if(JSON.parse(localStorage.posts_object)){
         $.each(JSON.parse(localStorage.posts_object), function( key, value ) {
 
